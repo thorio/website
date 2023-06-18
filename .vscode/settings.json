@@ -1,0 +1,10 @@
+{
+	"editor.insertSpaces": false,
+	"editor.tabSize": 4,
+	"files.exclude": {
+		"**/node_modules": true,
+		"**/.nuxt": true,
+		".pnpm-store": true,
+		"LICENSE": true,
+	},
+}

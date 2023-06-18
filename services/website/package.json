@@ -1,0 +1,14 @@
+{
+	"name": "website",
+	"private": true,
+	"scripts": {
+		"dev": "nuxt dev --port=3000",
+		"postinstall": "nuxt prepare"
+	},
+	"dependencies": {
+		"@website/component-lib": "workspace:^0.0.0"
+	},
+	"devDependencies": {
+		"nuxt": "^3.5.3"
+	}
+}
