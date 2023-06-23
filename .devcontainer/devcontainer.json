@@ -2,5 +2,8 @@
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
-	"onCreateCommand": "pnpm i --frozen-lockfile"
+	"onCreateCommand": "pnpm i --frozen-lockfile",
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+	}
 }
