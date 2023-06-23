@@ -1,0 +1,11 @@
+.devcontainer
+.git
+.github
+.vscode
+**/node_modules
+
+# output/cache directories
+**/.nuxt
+**/dist
+**/.output
+/.pnpm-store
