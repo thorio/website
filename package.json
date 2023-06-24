@@ -1,4 +1,8 @@
 {
 	"name": "website",
-	"private": true
+	"private": true,
+	"scripts": {
+		"build": "pnpm run -r build",
+		"lint": "pnpm run -r lint"
+	}
 }
