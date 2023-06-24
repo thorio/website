@@ -2,7 +2,7 @@ FROM base_image AS build
 
 WORKDIR /source/services/home
 
-RUN npm run build
+RUN pnpm run build
 
 FROM node:18-alpine AS final
 

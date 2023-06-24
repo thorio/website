@@ -3,6 +3,6 @@
 	"private": true,
 	"main": "index.ts",
 	"dependencies": {
-		"@nuxt/kit": "^3.5.3"
+		"@nuxt/kit": "^3.6"
 	}
 }

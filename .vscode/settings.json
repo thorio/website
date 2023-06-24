@@ -1,10 +1,14 @@
 {
-	"editor.insertSpaces": false,
-	"editor.tabSize": 4,
 	"files.exclude": {
 		"**/node_modules": true,
 		"**/.nuxt": true,
 		".pnpm-store": true,
 		"LICENSE": true,
 	},
+
+	"volar.format.initialIndent": {
+		"html": true,
+		"css": true,
+		"typescript": true,
+	}
 }

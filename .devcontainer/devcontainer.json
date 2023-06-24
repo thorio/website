@@ -5,5 +5,15 @@
 	"onCreateCommand": "pnpm i --frozen-lockfile",
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"EditorConfig.EditorConfig",
+				"gruntfuggly.todo-tree",
+				"shardulm94.trailing-spaces",
+				"Vue.volar"
+			]
+		}
 	}
 }

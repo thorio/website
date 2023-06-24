@@ -8,7 +8,6 @@
 			"runtimeExecutable": "pnpm",
 			"runtimeArgs": [
 				"run",
-				"-r",
 				"dev"
 			]
 		}

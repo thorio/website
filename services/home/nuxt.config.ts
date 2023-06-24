@@ -1,3 +1,3 @@
 export default defineNuxtConfig({
-	modules: ["@website/component-lib"]
+	components: ["@website/component-lib"],
 });

@@ -1,7 +1,7 @@
 {
-	"name": "website",
 	"private": true,
 	"scripts": {
+		"dev": "pnpm run -r --parallel dev",
 		"build": "pnpm run -r build",
 		"lint": "pnpm run -r lint"
 	}

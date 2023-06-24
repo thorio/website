@@ -1,0 +1,13 @@
+{
+	"name": "nuxt-app",
+	"private": true,
+	"scripts": {
+		"build": "nuxt generate",
+		"dev": "nuxt dev --port=3001",
+		"postinstall": "nuxt prepare"
+	},
+	"devDependencies": {
+		"@types/node": "^18",
+		"nuxt": "^3.6.0"
+	}
+}
