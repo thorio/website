@@ -8,6 +8,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "^18",
-		"nuxt": "^3.6.0"
+		"nuxt": "^3.6.0",
+		"sass": "^1.63.6"
 	}
 }

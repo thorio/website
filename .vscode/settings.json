@@ -5,10 +5,4 @@
 		".pnpm-store": true,
 		"LICENSE": true,
 	},
-
-	"volar.format.initialIndent": {
-		"html": true,
-		"css": true,
-		"typescript": true,
-	}
 }

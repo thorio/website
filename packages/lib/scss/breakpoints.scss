@@ -1,0 +1,96 @@
+/**
+ * Bootstrap's media breakpoint mixins, modified for @use.
+ * Original can be found here: https://github.com/twbs/bootstrap/blob/e946bf7e9434a99d750baf9a0786fcf52c5ff8f7/scss/mixins/_breakpoints.scss
+ * Copyright (c) 2011-2023 The Bootstrap Authors
+ * MIT License applies.
+ */
+
+$breakpoints: (
+	xxs: 0,
+	xs: 420px,
+	sm: 584px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px
+);
+
+@function next($name) {
+	$breakpoint-names: map-keys($breakpoints);
+	$n: index($breakpoint-names, $name);
+	@if not $n {
+		@error "breakpoint `#{$name}` not found in `#{$breakpointss}`";
+	}
+	@return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+@function br-min($name) {
+	$min: map-get($breakpoints, $name);
+	@return if($min != 0, $min, null);
+}
+
+@function br-max($name) {
+	$max: map-get($breakpoints, $name);
+	@return if($max and $max > 0, $max - .02, null);
+}
+
+@mixin up($name) {
+	$min: br-min($name);
+	@if $min {
+		@media (min-width: $min) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+@mixin down($name) {
+	$max: br-max($name);
+	@if $max {
+		@media (max-width: $max) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+@mixin between($lower, $upper) {
+	$min: br-min($lower);
+	$max: br-max($upper);
+
+	@if $min != null and $max != null {
+		@media (min-width: $min) and (max-width: $max) {
+			@content;
+		}
+	} @else if $max == null {
+		@include up($lower) {
+			@content;
+		}
+	} @else if $min == null {
+		@include down($upper) {
+			@content;
+		}
+	}
+}
+
+@mixin only($name) {
+	$min:  br-min($name);
+	$next: next($name);
+	$max:  mr-max($next);
+
+	@if $min != null and $max != null {
+		@media (min-width: $min) and (max-width: $max) {
+			@content;
+		}
+	} @else if $max == null {
+		@include up($name) {
+			@content;
+		}
+	} @else if $min == null {
+		@include down($next) {
+			@content;
+		}
+	}
+}

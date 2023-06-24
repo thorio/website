@@ -6,9 +6,10 @@
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
-		"@website/component-lib": "workspace:^0.0.0"
+		"lib": "workspace:^0.0.0"
 	},
 	"devDependencies": {
-		"nuxt": "^3.6"
+		"nuxt": "^3.6",
+		"sass": "^1.63.6"
 	}
 }
