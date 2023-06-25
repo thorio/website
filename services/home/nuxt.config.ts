@@ -1,6 +1,3 @@
 export default defineNuxtConfig({
-	components: [
-		"~/components",
-		"lib",
-	],
+	modules: ["@workspace/lib"],
 });

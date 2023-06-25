@@ -1,5 +1,5 @@
 <script setup lang="ts">
-let user = reactive({ name: "test" });
+let user = reactive({ name: "test user" });
 </script>
 
 <template>
@@ -8,7 +8,7 @@ let user = reactive({ name: "test" });
 </template>
 
 <style lang="scss">
-@use "lib/scss/colors.scss";
+@use "@workspace/lib/scss/colors.scss";
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
 body {

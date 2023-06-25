@@ -1,9 +1,9 @@
 <script setup lang="ts">
-	import pages from "../../pages";
-	const route = useRoute();
+import pages from "../../pages";
+const route = useRoute();
 
-	let errorpage = pages.find(p => p.code == route.params.id);
-	errorpage ??= pages.find(p => p.code == "meta404");
+let errorpage = pages.find(p => p.code == route.params.id);
+errorpage ??= pages.find(p => p.code == "meta404");
 </script>
 
 <template>
@@ -12,26 +12,28 @@
 	<p>{{ errorpage?.title }}</p>
 </template>
 
-<style>
-	html {
-		font-family: Arial, Helvetica, sans-serif;
-		background-color: #181a1b;
-		color: #e8e6e3;
-		text-align: center;
-	}
+<style lang="scss">
+@use "@workspace/lib/scss/colors.scss";
 
-	h1 {
-		font-size: 100pt;
-		margin-bottom: 0;
-	}
+html {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: colors.$background;
+	color: colors.$text;
+	text-align: center;
+}
 
-	sub {
-		font-size: 10pt;
-		color: #6f6e6c;
-	}
+h1 {
+	font-size: 100pt;
+	margin-bottom: 0;
+}
 
-	p {
-		font-size: 20pt;
-		margin-top: 4em;
-	}
+sub {
+	font-size: 10pt;
+	color: colors.$text-muted;
+}
+
+p {
+	font-size: 20pt;
+	margin-top: 4em;
+}
 </style>

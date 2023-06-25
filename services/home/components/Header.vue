@@ -9,22 +9,27 @@ defineProps(["username"]);
 			<span>Chirality</span>
 		</div>
 		<div class="item user">
-			<span class=" username">{{ username }}</span>
-			<a href="/logout">Logout</a>
+			<span class="username">{{ username }}</span>
+			<a href="/logout"><lib-Icon name="log-in" aria-label="log out" /></a>
 		</div>
 	</header>
 </template>
 
 <style lang="scss" scoped>
-@use "lib/scss/colors.scss";
-@use "lib/scss/breakpoints.scss";
+@use "@workspace/lib/scss/colors.scss";
+@use "@workspace/lib/scss/breakpoints.scss";
 
 header {
-	background-color: colors.$background-dark;
+	position: sticky;
+	top: 0;
+	z-index: 999;
+	background-color: colors.$background-header;
 	font-size: 20pt;
 	display: flex;
 	flex-direction: row;
 	padding: 0.3em 0.3em;
+	border-bottom: solid 2px colors.$accent;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 
 	@include breakpoints.up(md) {
 		padding: 0.3em 1em;
@@ -39,39 +44,33 @@ header {
 		margin-left: auto;
 	}
 
-	&.loading {
-		filter: brightness(1.3);
-		border-radius: 1em;
-		width: 10ch;
-	}
-
 	img {
 		height: 1em;
 		margin: auto 0;
 	}
 }
 
-.username {
-	margin: auto 0;
+.user {
 	font-size: 0.7em;
 
-	@include breakpoints.down(xxs) {
-		display: none;
+	>span {
+		margin: auto 0;
+
+		@include breakpoints.down(xs) {
+			display: none;
+		}
 	}
-}
 
-a {
-	font-size: 0.55em;
-	line-height: 2.2em;
-	text-decoration: none;
-	background-color: #303339;
-	border: none;
-	color: inherit;
-	padding: 1px 6px;
-	margin-left: 0.7em;
+	a {
+		transition: color 0.2s;
+		text-decoration: none;
+		border: none;
+		color: inherit;
+		margin: auto 0.5em auto 1.5em;
 
-	&:hover {
-		filter: brightness(1.1);
+		&:hover {
+			color: colors.$accent
+		}
 	}
 }
 </style>

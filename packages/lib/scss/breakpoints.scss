@@ -74,23 +74,3 @@ $breakpoints: (
 		}
 	}
 }
-
-@mixin only($name) {
-	$min:  br-min($name);
-	$next: next($name);
-	$max:  mr-max($next);
-
-	@if $min != null and $max != null {
-		@media (min-width: $min) and (max-width: $max) {
-			@content;
-		}
-	} @else if $max == null {
-		@include up($name) {
-			@content;
-		}
-	} @else if $min == null {
-		@include down($next) {
-			@content;
-		}
-	}
-}

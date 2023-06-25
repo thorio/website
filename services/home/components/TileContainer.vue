@@ -1,7 +1,7 @@
-<script setup>
+<script setup lang="ts">
 let tiles = reactive(new Array(20).fill({
 	icon: "default.png",
-	name: "default",
+	name: "example",
 	title: "test",
 	url: "https://example.net",
 }));
@@ -19,8 +19,7 @@ let tiles = reactive(new Array(20).fill({
 </template>
 
 <style lang="scss" scoped>
-@use "lib/scss/colors.scss";
-@use "lib/scss/breakpoints.scss";
+@use "@workspace/lib/scss/breakpoints.scss";
 
 section {
 	padding: 1em;
@@ -33,15 +32,15 @@ section {
 }
 
 .tile {
-	transition: filter 0.2s;
+	transition: transform 0.2s, filter 0.2s;
 	width: 15em;
 	height: 8em;
 	margin: 1em;
-	background-color: colors.$background-dark;
 	display: flex;
 	flex-direction: column;
 	color: inherit;
 	text-decoration: none;
+	filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.2));
 
 	@include breakpoints.down(sm) {
 		width: 45%;
@@ -50,7 +49,8 @@ section {
 	}
 
 	&:hover {
-		filter: brightness(1.1);
+		filter: drop-shadow(7px 7px 4px rgba(0, 0, 0, 0.2));
+		transform: translate(-2px, -2px);
 	}
 
 	.image-container {
