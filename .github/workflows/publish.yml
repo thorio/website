@@ -17,6 +17,9 @@ jobs:
         image: registry:2
         ports:
           - 5000:5000
+    strategy:
+      matrix:
+        service: ["errorpages", "home"]
     permissions:
       contents: read
       packages: write
@@ -50,12 +53,12 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/home
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/${{ matrix.service }}
 
       - name: build and push image
         uses: docker/build-push-action@v4
         with:
-          context: services/home
+          context: services/${{ matrix.service }}
           build-contexts: |
             base_image=docker-image://localhost:5000/local/base_image
           push: true
