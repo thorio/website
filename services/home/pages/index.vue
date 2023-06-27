@@ -1,10 +1,10 @@
 <script setup lang="ts">
-let user = reactive({ name: "test user" });
+const { data } = await useFetch("/api/home");
 </script>
 
 <template>
-	<Header :username="user.name" />
-	<TileContainer />
+	<Header :username="data!.username" :logoutUrl="data!.logoutUrl" />
+	<TileContainer :tiles="data!.tiles" />
 </template>
 
 <style lang="scss">

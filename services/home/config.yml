@@ -1,0 +1,85 @@
+logoutUrl: https://example.com/logout
+services:
+  - name: Demo Service 1
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 2
+    group: service2
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 3
+    group: service3
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 4
+    group: service4
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 5
+    group: service5
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 6
+    group: service6
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 7
+    group: service7
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 8
+    group: service8
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 9
+    group: service9
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 10
+    group: service10
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 11
+    group: service11
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 12
+    group: service12
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 13
+    group: service13
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 14
+    group: service14
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 15
+    group: service15
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 16
+    group: service16
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 17
+    group: service17
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 18
+    group: service18
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 19
+    group: service19
+    icon: default.png
+    url: https://example.com
+  - name: Demo Service 20
+    group: service20
+    icon: default.png
+    url: https://example.com
+  - name: Forbidden Demo Service
+    group: forbiddengroup
+    icon: default.png
+    url: https://example.com

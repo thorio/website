@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps(["username"]);
+defineProps<{ username: string; logoutUrl: string; }>();
 </script>
 
 <template>
@@ -10,7 +10,7 @@ defineProps(["username"]);
 		</div>
 		<div class="item user">
 			<span class="username">{{ username }}</span>
-			<a href="/logout"><lib-Icon name="log-in" aria-label="log out" /></a>
+			<a :href="logoutUrl"><lib-Icon name="log-in" aria-label="log out" /></a>
 		</div>
 	</header>
 </template>

@@ -7,7 +7,10 @@ RUN pnpm run build
 FROM node:18-alpine AS final
 
 RUN mkdir /app
+WORKDIR /app
+
 COPY --from=build /source/services/home/.output /app
+COPY --from=build /source/services/home/config.yml /app/config.yml
 
 ENV NITRO_PORT 8080
 EXPOSE 8080

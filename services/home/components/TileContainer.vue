@@ -1,10 +1,7 @@
 <script setup lang="ts">
-let tiles = reactive(new Array(20).fill({
-	icon: "default.png",
-	name: "example",
-	title: "test",
-	url: "https://example.net",
-}));
+import { Tile } from "~/types/tile";
+
+defineProps<{ tiles: Tile[]; }>();
 </script>
 
 <template>

@@ -6,7 +6,8 @@
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
-		"@workspace/lib": "workspace:^0.0.0"
+		"@workspace/lib": "workspace:^0.0.0",
+		"yaml": "^2.3.1"
 	},
 	"devDependencies": {
 		"nuxt": "^3.6.0",

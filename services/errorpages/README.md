@@ -15,7 +15,7 @@ services:
       traefik.enable: true
       traefik.http.routers.errorpages.rule: HostRegexp(`{host:.+}`)
       traefik.http.routers.errorpages.entrypoints: https
-      traefik.http.services.errorpages.loadbalancer.server.port: 80
+      traefik.http.services.errorpages.loadbalancer.server.port: 8080
 ```
 
 Traefik will then automatically fall back on this service, which returns the 404 page.
