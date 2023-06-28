@@ -1,9 +1,10 @@
 # Monorepo for my website & homelab services
 
-TODO: descriptions
+TODO: description
 
 # Building
-Build the root Dockerfile with `-t base_image`, then build the individual services' images.
+Requires docker and docker-compose.
+Run `docker-compose up --build` to build and deploy containers on your local machine.
 
 # Development
 See devcontainer and VSCode launch.json.

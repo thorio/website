@@ -1,0 +1,26 @@
+---
+version: "3.8"
+
+services:
+  base:
+    # container doesn't need to run, we only need the built image
+    command: -c exit
+    image: base_image
+    build: .
+
+  # TODO: reverse proxy configuration
+  #traefik:
+
+  errorpages:
+    build: services/errorpages
+    depends_on:
+      - base
+    ports:
+      - 3001:8080
+
+  home:
+    build: services/home
+    depends_on:
+      - base
+    ports:
+      - 3000:8080

@@ -2,6 +2,7 @@
 .git
 .github
 .vscode
+docker-compose.yml
 **/node_modules
 
 # output/cache directories

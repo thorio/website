@@ -3,6 +3,8 @@
 	"scripts": {
 		"dev": "pnpm run -r --parallel dev",
 		"build": "pnpm run -r build",
-		"lint": "pnpm run -r lint"
+		"lint": "pnpm run -r lint",
+		"up": "docker-compose up -d --build",
+		"down": "docker-compose down --remove-orphans"
 	}
 }
