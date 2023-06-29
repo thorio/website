@@ -2,6 +2,17 @@ import { eventHandler } from "h3";
 
 export default defineNuxtConfig({
 	modules: ["@workspace/lib"],
+
+	app: {
+		head: {
+			title: "Chirality - Home",
+			htmlAttrs: { lang: "en" },
+			link: [
+				{ rel: "icon", href: "/favicon.svg" },
+			],
+		},
+	},
+
 	devServerHandlers: [
 		{
 			// These headers are set by the reverse proxy in production,

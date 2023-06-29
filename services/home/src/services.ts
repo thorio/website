@@ -8,7 +8,6 @@ export function getServices(user: User): Tile[] {
 		.map(s => ({
 			url: s.url,
 			name: s.name,
-			icon: s.icon,
-			title: "huh?",
+			icon: s.icon ?? "default.webp",
 		}));
 }

@@ -1,4 +1,9 @@
 <script setup lang="ts">
+useSeoMeta({
+	description: "Service Dashboard for chirality.de",
+});
+
+
 const { data } = await useFetch("/api/home");
 </script>
 

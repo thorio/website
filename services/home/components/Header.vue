@@ -5,12 +5,12 @@ defineProps<{ username: string; logoutUrl: string; }>();
 <template>
 	<header>
 		<div class="item">
-			<img src="../assets/logo.svg" alt="" />
+			<img width="150" height="150" src="/favicon.svg" alt="" />
 			<span>Chirality</span>
 		</div>
 		<div class="item user">
 			<span class="username">{{ username }}</span>
-			<a :href="logoutUrl"><lib-Icon name="log-in" aria-label="log out" /></a>
+			<a :href="logoutUrl"><lib-Icon name="log-in" role="link" aria-label="log out" /></a>
 		</div>
 	</header>
 </template>
@@ -46,6 +46,7 @@ header {
 
 	img {
 		height: 1em;
+		width: auto;
 		margin: auto 0;
 	}
 }
