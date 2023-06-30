@@ -7,8 +7,8 @@ const RemoteName = "remote-name";
 
 export function getUser(headers: IncomingHttpHeaders): User {
 	let user = headers[RemoteUser] as string;
-	let name = headers[RemoteName] as string || user;
-	let groups = headers[RemoteGroups] as string || "";
+	let name = headers[RemoteName] as string ?? user;
+	let groups = headers[RemoteGroups] as string ?? "";
 
 	if (!user) {
 		throw new Error("Remote-User header is not set");

@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
 	app: {
 		head: {
-			title: "Chirality - Home",
+			title: "Home - Chirality",
 			htmlAttrs: { lang: "en" },
 			link: [
 				{ rel: "icon", href: "/favicon.svg" },

@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import pages from "../../pages";
+
 const route = useRoute();
 
 let errorpage = pages.find(p => p.code == route.params.id);
 errorpage ??= pages.find(p => p.code == "meta404");
+
+useSeoMeta({ title: `${errorpage?.name} - Chirality` });
 </script>
 
 <template>

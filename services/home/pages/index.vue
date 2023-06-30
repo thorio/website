@@ -1,20 +1,17 @@
 <script setup lang="ts">
-useSeoMeta({
-	description: "Service Dashboard for chirality.de",
-});
-
-
 const { data } = await useFetch("/api/home");
+
+useSeoMeta({ description: "Service Dashboard for chirality.de" });
 </script>
 
 <template>
-	<Header :username="data!.username" :logoutUrl="data!.logoutUrl" />
+	<ChiralityHeader :username="data!.username" :logoutUrl="data!.logoutUrl" />
 	<TileContainer :tiles="data!.tiles" />
 </template>
 
 <style lang="scss">
 @use "@workspace/lib/scss/colors.scss";
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@use "~/scss/fonts/roboto.scss";
 
 body {
 	margin: 0;

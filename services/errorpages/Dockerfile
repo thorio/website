@@ -4,7 +4,7 @@ WORKDIR /source/services/errorpages
 
 RUN pnpm run build
 
-FROM nginx:1.25-alpine
+FROM nginx:1.25-alpine AS final
 
 RUN mkdir /www && rm /etc/nginx/conf.d/*
 COPY --from=build /source/services/errorpages/dist/_error /www/_error

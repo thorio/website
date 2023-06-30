@@ -8,7 +8,7 @@ defineProps<{ tiles: Tile[]; }>();
 	<section>
 		<a class="tile" v-for="tile in tiles" :href="tile.url">
 			<div class="image-container">
-				<img width="128" height="128" :src="`/icons/${tile.icon}`" alt="" />
+				<img width="80" height="80" :src="`/icons/${tile.icon}`" alt="" />
 			</div>
 			<p>{{ tile.name }}</p>
 		</a>
@@ -29,8 +29,8 @@ section {
 }
 
 .tile {
-	width: 240px;
-	height: 128px;
+	width: 15em;
+	height: 8em;
 	margin: 1em;
 	margin-bottom: 1.5em;
 	display: flex;

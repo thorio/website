@@ -10,7 +10,7 @@ defineProps<{ username: string; logoutUrl: string; }>();
 		</div>
 		<div class="item user">
 			<span class="username">{{ username }}</span>
-			<a :href="logoutUrl"><lib-Icon name="log-in" role="link" aria-label="log out" /></a>
+			<a :href="logoutUrl"><span class="gg-log-in" role="link" aria-label="log out"></span></a>
 		</div>
 	</header>
 </template>
@@ -18,6 +18,7 @@ defineProps<{ username: string; logoutUrl: string; }>();
 <style lang="scss" scoped>
 @use "@workspace/lib/scss/colors.scss";
 @use "@workspace/lib/scss/breakpoints.scss";
+@use "css.gg/icons/scss/log-in.scss";
 
 header {
 	position: sticky;
@@ -54,7 +55,7 @@ header {
 .user {
 	font-size: 0.7em;
 
-	>span {
+	.username {
 		margin: auto 0;
 
 		@include breakpoints.down(xs) {
@@ -67,7 +68,8 @@ header {
 		text-decoration: none;
 		border: none;
 		color: inherit;
-		margin: auto 0.5em auto 1.5em;
+		margin: auto 0 auto 1em;
+		padding: 0 7px 0 13px;
 
 		&:hover {
 			color: colors.$accent
