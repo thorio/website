@@ -8,19 +8,46 @@ services:
     image: base_image
     build: .
 
-  # TODO: reverse proxy configuration
-  #traefik:
+  traefik:
+    image: traefik:2.10
+    command: |-
+      --providers.docker
+      --entryPoints.http.address=":3000"
+    ports:
+      - 3000:3000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
 
   errorpages:
     build: services/errorpages
     depends_on:
       - base
-    ports:
-      - 3001:8080
+    labels:
+      traefik.enable: true
+      traefik.http.routers.errorpages.rule: PathPrefix(`/`)
+      traefik.http.services.errorpages.loadbalancer.server.port: 8080
+
+  well-known:
+    build: services/well-known
+    labels:
+      traefik.enable: true
+      traefik.http.routers.well-known.rule: Host(`localhost`) && PathPrefix(`/.well-known/`)
+      traefik.http.services.well-known.loadbalancer.server.port: 8080
 
   home:
     build: services/home
     depends_on:
       - base
-    ports:
-      - 3000:8080
+    labels:
+      traefik.enable: true
+      traefik.http.routers.home.rule: Host(`home.localhost`)
+      traefik.http.routers.home.middlewares: home-errors, home-headers
+      traefik.http.services.home.loadbalancer.server.port: 8080
+      traefik.http.middlewares.home-errors.errors.status: 404
+      traefik.http.middlewares.home-errors.errors.query: /_error/{status}
+      traefik.http.middlewares.home-errors.errors.service: errorpages@docker
+
+      # In production, these headers are set by forward auth
+      traefik.http.middlewares.home-headers.headers.customrequestheaders.Remote-User: test-user
+      traefik.http.middlewares.home-headers.headers.customrequestheaders.Remote-Name: Test User
+      traefik.http.middlewares.home-headers.headers.customrequestheaders.Remote-Groups: service2,restOfServices,forbiddengroup

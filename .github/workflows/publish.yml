@@ -19,7 +19,7 @@ jobs:
           - 5000:5000
     strategy:
       matrix:
-        service: ["errorpages", "home"]
+        service: ["errorpages", "home", "well-known"]
     permissions:
       contents: read
       packages: write
