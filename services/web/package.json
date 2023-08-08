@@ -1,0 +1,15 @@
+{
+	"private": true,
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev --port=3002",
+		"postinstall": "nuxt prepare"
+	},
+	"dependencies": {
+		"@workspace/lib": "workspace:^0.0.0"
+	},
+	"devDependencies": {
+		"nuxt": "^3.6.0",
+		"sass": "^1.63.6"
+	}
+}
