@@ -30,7 +30,7 @@ html {
 	box-sizing: inherit;
 }
 
-*:focus {
+*:focus-visible {
 	outline: 1px solid #777;
 }
 </style>
