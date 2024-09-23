@@ -1,15 +1,12 @@
----
-version: "3.8"
-
 services:
   base:
     # container doesn't need to run, we only need the built image
-    command: -c exit
+    command: -e 'process.exit()'
     image: base_image
     build: .
 
   traefik:
-    image: traefik:2.10
+    image: traefik:3.1
     command: |-
       --providers.docker
       --entryPoints.http.address=":3000"

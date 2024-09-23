@@ -6,12 +6,12 @@
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
-		"@workspace/lib": "workspace:^0.0.0",
-		"css.gg": "^2.1.1",
-		"yaml": "^2.3.1"
+		"@workspace/lib": "workspace:^0",
+		"css.gg": "^2",
+		"yaml": "^2"
 	},
 	"devDependencies": {
-		"nuxt": "^3.6.0",
-		"sass": "^1.63.6"
+		"nuxt": "^3",
+		"sass": "^1"
 	}
 }

@@ -7,11 +7,11 @@
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
-		"@workspace/lib": "workspace:^0.0.0"
+		"@workspace/lib": "workspace:^0"
 	},
 	"devDependencies": {
 		"@types/node": "^18",
-		"nuxt": "^3.6.0",
-		"sass": "^1.63.6"
+		"nuxt": "^3",
+		"sass": "^1"
 	}
 }

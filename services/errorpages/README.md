@@ -2,6 +2,8 @@
 
 Service that delivers HTML errorpages, intended for use with [Traefik](https://github.com/traefik/traefik).
 
+> Note: this was written for Traefik v2, though it should work with v3 as well.
+
 ## Quick Start
 
 To enable global 404 pages for traefik, add this to your compose file:

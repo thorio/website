@@ -1,4 +1,4 @@
-FROM nginx:1.25-alpine AS final
+FROM nginx:1.27-alpine AS final
 
 RUN mkdir /www && rm /etc/nginx/conf.d/*
 COPY ./src /www/.well-known
