@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LogOut } from 'lucide-vue-next';
+import { LogOut } from "lucide-vue-next";
 
 defineProps<{ username: string; logoutUrl: string; }>();
 </script>
@@ -20,8 +20,8 @@ defineProps<{ username: string; logoutUrl: string; }>();
 </template>
 
 <style lang="scss" scoped>
-@use "@workspace/ui-lib/scss/colors.scss";
-@use "@workspace/ui-lib/scss/breakpoints.scss";
+@use "../scss/colors.scss";
+@use "../scss/breakpoints.scss";
 
 header {
 	position: sticky;

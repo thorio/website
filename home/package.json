@@ -7,7 +7,6 @@
 	},
 	"dependencies": {
 		"@workspace/ui-lib": "workspace:^",
-		"lucide-vue-next": "^0.453.0",
 		"yaml": "^2.6.0"
 	},
 	"devDependencies": {
