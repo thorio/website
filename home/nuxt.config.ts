@@ -1,6 +1,7 @@
 import { eventHandler } from "h3";
 
 export default defineNuxtConfig({
+	compatibilityDate: "2024-10-19",
 	modules: ["@workspace/ui-lib"],
 
 	app: {

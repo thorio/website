@@ -1,6 +1,8 @@
 import routes from "./pages";
 
 export default defineNuxtConfig({
+	compatibilityDate: "2024-10-19",
+
 	app: {
 		head: {
 			htmlAttrs: { lang: "en" },
@@ -8,11 +10,18 @@ export default defineNuxtConfig({
 	},
 
 	experimental: {
-		noScripts: true,
 		payloadExtraction: false,
 	},
 
-	generate: {
-		routes: routes.map(r => `/_error/${r.code}.html`),
-	}
+	features: {
+		noScripts: true,
+	},
+
+	nitro: {
+		prerender: {
+			crawlLinks: false,
+			routes: routes.map(r => `/_error/${r.code}.html`),
+			ignore: ["/200", "/404"]
+		},
+	},
 });
