@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { LogOut } from 'lucide-vue-next';
+
 defineProps<{ username: string; logoutUrl: string; }>();
 </script>
 
@@ -10,7 +12,9 @@ defineProps<{ username: string; logoutUrl: string; }>();
 		</div>
 		<div class="item user">
 			<span class="username">{{ username }}</span>
-			<a :href="logoutUrl"><span class="gg-log-in" role="link" aria-label="log out"></span></a>
+			<a :href="logoutUrl">
+				<LogOut :size="18" />
+			</a>
 		</div>
 	</header>
 </template>
@@ -18,7 +22,6 @@ defineProps<{ username: string; logoutUrl: string; }>();
 <style lang="scss" scoped>
 @use "@workspace/ui-lib/scss/colors.scss";
 @use "@workspace/ui-lib/scss/breakpoints.scss";
-@use "css.gg/icons/scss/log-in.scss";
 
 header {
 	position: sticky;
@@ -65,11 +68,9 @@ header {
 
 	a {
 		transition: color 0.2s;
-		text-decoration: none;
-		border: none;
 		color: inherit;
 		margin: auto 0 auto 1em;
-		padding: 0 7px 0 13px;
+		padding-top: 6px;
 
 		&:hover {
 			color: colors.$accent
