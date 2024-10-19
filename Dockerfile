@@ -10,7 +10,7 @@ COPY . .
 # this allows docker to cache the dependencies and speed up build times.
 # docker can't COPY with globs (yet), so it needs to happen in this filter stage.
 RUN mkdir /filter
-RUN cp --parents ./*/*/package*.json .npmrc package.json pnpm-lock.yaml pnpm-workspace.yaml /filter/
+RUN cp --parents ./*/package*.json .npmrc package.json pnpm-lock.yaml pnpm-workspace.yaml /filter/
 
 # this stage initializes the environment and installs dependencies
 FROM node:20-alpine AS base

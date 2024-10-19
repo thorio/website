@@ -58,7 +58,7 @@ jobs:
       - name: build and push image
         uses: docker/build-push-action@v4
         with:
-          context: services/${{ matrix.service }}
+          context: ${{ matrix.service }}
           build-contexts: |
             base_image=docker-image://localhost:5000/local/base_image
           push: true

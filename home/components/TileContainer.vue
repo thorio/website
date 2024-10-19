@@ -16,7 +16,7 @@ defineProps<{ tiles: Tile[]; }>();
 </template>
 
 <style lang="scss" scoped>
-@use "@workspace/lib/scss/breakpoints.scss";
+@use "@workspace/ui-lib/scss/breakpoints.scss";
 
 section {
 	padding: 1em;

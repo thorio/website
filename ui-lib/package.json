@@ -1,5 +1,5 @@
 {
-	"name": "@workspace/lib",
+	"name": "@workspace/ui-lib",
 	"private": true,
 	"main": "index.ts",
 	"dependencies": {

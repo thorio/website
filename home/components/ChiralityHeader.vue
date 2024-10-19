@@ -16,8 +16,8 @@ defineProps<{ username: string; logoutUrl: string; }>();
 </template>
 
 <style lang="scss" scoped>
-@use "@workspace/lib/scss/colors.scss";
-@use "@workspace/lib/scss/breakpoints.scss";
+@use "@workspace/ui-lib/scss/colors.scss";
+@use "@workspace/ui-lib/scss/breakpoints.scss";
 @use "css.gg/icons/scss/log-in.scss";
 
 header {

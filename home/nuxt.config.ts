@@ -1,7 +1,7 @@
 import { eventHandler } from "h3";
 
 export default defineNuxtConfig({
-	modules: ["@workspace/lib"],
+	modules: ["@workspace/ui-lib"],
 
 	app: {
 		head: {

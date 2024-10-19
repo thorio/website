@@ -16,7 +16,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
   errorpages:
-    build: services/errorpages
+    build: errorpages
     depends_on:
       - base
     labels:
@@ -25,14 +25,14 @@ services:
       traefik.http.services.errorpages.loadbalancer.server.port: 8080
 
   well-known:
-    build: services/well-known
+    build: well-known
     labels:
       traefik.enable: true
       traefik.http.routers.well-known.rule: Host(`localhost`) && PathPrefix(`/.well-known/`)
       traefik.http.services.well-known.loadbalancer.server.port: 8080
 
   home:
-    build: services/home
+    build: home
     depends_on:
       - base
     labels:

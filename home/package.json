@@ -1,16 +1,16 @@
 {
-	"name": "nuxt-app",
 	"private": true,
 	"scripts": {
-		"build": "nuxt generate",
-		"dev": "nuxt dev --port=3001",
+		"build": "nuxt build",
+		"dev": "nuxt dev --port=3000",
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
-		"@workspace/lib": "workspace:^0"
+		"@workspace/ui-lib": "workspace:^0",
+		"css.gg": "^2",
+		"yaml": "^2"
 	},
 	"devDependencies": {
-		"@types/node": "^18",
 		"nuxt": "^3",
 		"sass": "^1"
 	}

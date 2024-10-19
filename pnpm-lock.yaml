@@ -8,17 +8,11 @@ importers:
 
   .: {}
 
-  packages/lib:
+  errorpages:
     dependencies:
-      '@nuxt/kit':
-        specifier: ^3
-        version: 3.6.0(rollup@3.25.1)
-
-  services/errorpages:
-    dependencies:
-      '@workspace/lib':
+      '@workspace/ui-lib':
         specifier: workspace:^0
-        version: link:../../packages/lib
+        version: link:../ui-lib
     devDependencies:
       '@types/node':
         specifier: ^18
@@ -30,11 +24,11 @@ importers:
         specifier: ^1
         version: 1.63.6
 
-  services/home:
+  home:
     dependencies:
-      '@workspace/lib':
+      '@workspace/ui-lib':
         specifier: workspace:^0
-        version: link:../../packages/lib
+        version: link:../ui-lib
       css.gg:
         specifier: ^2
         version: 2.1.1
@@ -48,6 +42,12 @@ importers:
       sass:
         specifier: ^1
         version: 1.63.6
+
+  ui-lib:
+    dependencies:
+      '@nuxt/kit':
+        specifier: ^3
+        version: 3.6.0(rollup@3.25.1)
 
 packages:
 

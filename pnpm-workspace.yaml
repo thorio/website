@@ -1,3 +1,5 @@
 packages:
-  - packages/**
-  - services/**
+  - ui-lib
+  - errorpages
+  - home
+  - well-known

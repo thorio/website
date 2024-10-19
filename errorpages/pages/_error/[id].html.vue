@@ -16,7 +16,7 @@ useSeoMeta({ title: `${errorpage?.name} - Chirality` });
 </template>
 
 <style lang="scss">
-@use "@workspace/lib/scss/colors.scss";
+@use "@workspace/ui-lib/scss/colors.scss";
 
 html {
 	font-family: Arial, Helvetica, sans-serif;
