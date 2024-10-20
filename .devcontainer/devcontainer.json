@@ -4,14 +4,16 @@
 	},
 	"onCreateCommand": "pnpm i --frozen-lockfile",
 	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+		"ghcr.io/devcontainers/features/docker-in-docker:2": { }
 	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"EditorConfig.EditorConfig",
 				"gruntfuggly.todo-tree",
+				"mrmlnc.vscode-scss",
 				"shardulm94.trailing-spaces",
+				"sibiraj-s.vscode-scss-formatter",
 				"Vue.volar"
 			]
 		}

@@ -1,9 +1,12 @@
-/**
- * Bootstrap's media breakpoint mixins, modified for @use.
- * Original can be found here: https://github.com/twbs/bootstrap/blob/e946bf7e9434a99d750baf9a0786fcf52c5ff8f7/scss/mixins/_breakpoints.scss
- * Copyright (c) 2011-2023 The Bootstrap Authors
- * MIT License applies.
- */
+/*!
+* Bootstrap's media breakpoint mixins, modified for @use and global function deprecations.
+* Original can be found here: https://github.com/twbs/bootstrap/blob/e946bf7e9434a99d750baf9a0786fcf52c5ff8f7/scss/mixins/_breakpoints.scss
+* Copyright (c) 2011-2023 The Bootstrap Authors
+* MIT License applies.
+*/
+
+@use "sass:list";
+@use "sass:map";
 
 $breakpoints: (
 	xxs: 0,
@@ -16,26 +19,29 @@ $breakpoints: (
 );
 
 @function next($name) {
-	$breakpoint-names: map-keys($breakpoints);
-	$n: index($breakpoint-names, $name);
+	$breakpoint-names: map.keys($breakpoints);
+	$n: list.index($breakpoint-names, $name);
+
 	@if not $n {
 		@error "breakpoint `#{$name}` not found in `#{$breakpointss}`";
 	}
-	@return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+
+	@return if($n < list.length($breakpoint-names), list.nth($breakpoint-names, $n + 1), null);
 }
 
 @function br-min($name) {
-	$min: map-get($breakpoints, $name);
+	$min: map.get($breakpoints, $name);
 	@return if($min != 0, $min, null);
 }
 
 @function br-max($name) {
-	$max: map-get($breakpoints, $name);
-	@return if($max and $max > 0, $max - .02, null);
+	$max: map.get($breakpoints, $name);
+	@return if($max and $max > 0, $max - 0.02, null);
 }
 
 @mixin up($name) {
 	$min: br-min($name);
+
 	@if $min {
 		@media (min-width: $min) {
 			@content;
@@ -47,6 +53,7 @@ $breakpoints: (
 
 @mixin down($name) {
 	$max: br-max($name);
+
 	@if $max {
 		@media (max-width: $max) {
 			@content;
