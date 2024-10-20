@@ -1,3 +1,7 @@
+x-shared-env: &shared_env
+  NUXT_PUBLIC_LOGOUT_URL: "http://localhost:3000"
+  NUXT_PUBLIC_LOGIN_URL: "http://home.localhost:3000"
+
 services:
   base:
     # container doesn't need to run, we only need the built image
@@ -23,6 +27,9 @@ services:
       traefik.enable: true
       traefik.http.routers.errorpages.rule: PathPrefix(`/`)
       traefik.http.services.errorpages.loadbalancer.server.port: 8080
+      traefik.http.middlewares.global-errors.errors.status: 500-599,404
+      traefik.http.middlewares.global-errors.errors.query: /_error/{status}
+      traefik.http.middlewares.global-errors.errors.service: errorpages@docker
 
   well-known:
     build: well-known
@@ -35,14 +42,12 @@ services:
     build: home
     depends_on:
       - base
+    environment: *shared_env
     labels:
       traefik.enable: true
       traefik.http.routers.home.rule: Host(`home.localhost`)
-      traefik.http.routers.home.middlewares: home-errors, home-headers
+      traefik.http.routers.home.middlewares: global-errors, home-headers
       traefik.http.services.home.loadbalancer.server.port: 8080
-      traefik.http.middlewares.home-errors.errors.status: 404
-      traefik.http.middlewares.home-errors.errors.query: /_error/{status}
-      traefik.http.middlewares.home-errors.errors.service: errorpages@docker
 
       # In production, these headers are set by forward auth
       traefik.http.middlewares.home-headers.headers.customrequestheaders.Remote-User: test-user

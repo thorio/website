@@ -3,6 +3,8 @@
 		"editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter",
 	},
 
+	"gotoAlias.closeDts": true,
+
 	"files.exclude": {
 		"**/node_modules": true,
 		"**/.nuxt": true,

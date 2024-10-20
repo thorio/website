@@ -1,5 +1,5 @@
-import { User } from "~/types/user";
-import { IncomingHttpHeaders } from "http";
+import type { User } from "~/types";
+import type { IncomingHttpHeaders } from "http";
 
 const RemoteUser = "remote-user";
 const RemoteGroups = "remote-groups";
@@ -14,5 +14,9 @@ export function getUser(headers: IncomingHttpHeaders): User {
 		throw new Error("Remote-User header is not set");
 	}
 
-	return new User(user, name as string, groups.split(","));
-}
+	return {
+		user,
+		name,
+		groups: groups.split(",")
+	};
+};

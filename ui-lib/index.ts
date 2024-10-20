@@ -1,12 +1,29 @@
 import { defineNuxtModule, createResolver, addComponentsDir } from "@nuxt/kit";
+import defu from "defu";
+
+export interface Config {
+	loginUrl: string,
+	logoutUrl: string,
+}
+
+declare module "@nuxt/schema" {
+	interface PublicRuntimeConfig extends Config { }
+}
+
+const defaults: Config = {
+	loginUrl: "https://home.chirality.de",
+	logoutUrl: "https://auth.chirality.de",
+};
 
 export default defineNuxtModule({
-	meta: {
-		name: "ui-lib",
-	},
+	meta: { name: "ui-lib" },
+	defaults,
 
 	async setup(_, nuxt) {
 		const resolver = createResolver(import.meta.url);
+
+		nuxt.options.runtimeConfig.public = defu(nuxt.options.runtimeConfig.public, defaults);
+		nuxt.options.css.push(resolver.resolve("./scss/global.scss"));
 
 		nuxt.hook("nitro:config", async (nitroConfig) => {
 			(nitroConfig.publicAssets ??= []).push({
@@ -17,7 +34,6 @@ export default defineNuxtModule({
 
 		await addComponentsDir({
 			path: resolver.resolve("./components"),
-			global: true,
 		});
 	},
 });

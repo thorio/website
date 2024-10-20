@@ -6,6 +6,10 @@
 			"request": "launch",
 			"name": "dev",
 			"runtimeExecutable": "pnpm",
+			"env": {
+				"NUXT_PUBLIC_LOGOUT_URL": "http://localhost:3002",
+				"NUXT_PUBLIC_LOGIN_URL": "http://localhost:3000"
+			},
 			"runtimeArgs": [
 				"run",
 				"dev"

@@ -1,19 +1,30 @@
 <script setup lang="ts">
-import { LogOut } from "lucide-vue-next";
+import { LogOut, LogIn } from "lucide-vue-next";
+import { useConfig } from "../src/config";
 
-defineProps<{ username: string; logoutUrl: string; }>();
+let { loginUrl, logoutUrl } = useConfig();
+
+defineProps<{
+	ghost?: boolean,
+	noLogo?: boolean,
+	username?: string;
+}>();
 </script>
 
 <template>
-	<header>
-		<div class="item">
-			<img width="150" height="150" src="/favicon.svg" alt="" />
-			<span>Chirality</span>
-		</div>
+	<header :class="{ solid: !ghost }">
+		<ChiralityLogo v-if="!noLogo" />
+
 		<div class="item user">
-			<span class="username">{{ username }}</span>
-			<a :href="logoutUrl">
-				<LogOut :size="18" />
+			<template v-if="username">
+				<span class="username">{{ username }}</span>
+				<a :href="logoutUrl">
+					<LogOut :size="18" />
+				</a>
+			</template>
+
+			<a v-else :href="loginUrl">
+				<LogIn :size="18" />
 			</a>
 		</div>
 	</header>
@@ -27,16 +38,20 @@ header {
 	position: sticky;
 	top: 0;
 	z-index: 999;
-	background-color: colors.$background-header;
 	font-size: 20pt;
 	display: flex;
 	flex-direction: row;
+	border-bottom: solid 2px transparent;
 	padding: 0.3em 0.3em;
-	border-bottom: solid 2px colors.$accent;
-	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 
 	@include breakpoints.up(md) {
 		padding: 0.3em 1em;
+	}
+
+	&.solid {
+		background-color: colors.$background-header;
+		border-bottom-color: colors.$accent;
+		box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 	}
 }
 
@@ -46,12 +61,6 @@ header {
 
 	&.user {
 		margin-left: auto;
-	}
-
-	img {
-		height: 1em;
-		width: auto;
-		margin: auto 0;
 	}
 }
 

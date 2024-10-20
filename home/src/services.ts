@@ -1,6 +1,5 @@
-import { User } from "~/types/user";
+import type { Tile, User } from "~/types";
 import { getConfig } from "./config";
-import { Tile } from "types/tile";
 
 export function getServices(user: User): Tile[] {
 	return getConfig().services

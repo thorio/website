@@ -9,6 +9,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				"antfu.goto-alias",
 				"EditorConfig.EditorConfig",
 				"gruntfuggly.todo-tree",
 				"mrmlnc.vscode-scss",

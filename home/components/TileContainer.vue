@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Tile } from "~/types/tile";
+import type { Tile } from "~/types";
 
 defineProps<{ tiles: Tile[]; }>();
 </script>
