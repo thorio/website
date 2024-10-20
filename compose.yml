@@ -53,3 +53,14 @@ services:
       traefik.http.middlewares.home-headers.headers.customrequestheaders.Remote-User: test-user
       traefik.http.middlewares.home-headers.headers.customrequestheaders.Remote-Name: Test User
       traefik.http.middlewares.home-headers.headers.customrequestheaders.Remote-Groups: service2,restOfServices,forbiddengroup
+
+  web:
+    build: web
+    depends_on:
+      - base
+    environment: *shared_env
+    labels:
+      traefik.enable: true
+      traefik.http.routers.web.rule: Host(`localhost`)
+      traefik.http.routers.web.middlewares: global-errors
+      traefik.http.services.web.loadbalancer.server.port: 8080

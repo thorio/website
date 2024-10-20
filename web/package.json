@@ -1,0 +1,17 @@
+{
+	"private": true,
+	"scripts": {
+		"build": "nuxt build",
+		"dev": "nuxt dev --port=3002",
+		"postinstall": "nuxt prepare"
+	},
+	"dependencies": {
+		"@workspace/ui-lib": "workspace:^"
+	},
+	"devDependencies": {
+		"@nuxt/fonts": "^0.10.0",
+		"nuxt": "^3.13.2",
+		"sass": "^1.80.3",
+		"vite": "^5.4.9"
+	}
+}
