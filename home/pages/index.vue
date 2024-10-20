@@ -11,7 +11,6 @@ useSeoMeta({ description: "Service Dashboard for chirality.de" });
 
 <style lang="scss">
 @use "@workspace/ui-lib/scss/colors.scss";
-@use "~/scss/fonts/roboto.scss";
 
 body {
 	margin: 0;
