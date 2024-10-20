@@ -3,9 +3,9 @@ useSeoMeta({ description: "Nothing to see here (yet)" });
 </script>
 
 <template>
-	<ChiralityHeader ghost no-logo class="test" />
-	<p>
-		<ChiralityLogo />
+	<AppHeader ghost no-logo />
+	<p class="title">
+		<AppLogo />
 	</p>
 
 	<div class="placeholder"></div>
@@ -26,6 +26,10 @@ useSeoMeta({ description: "Nothing to see here (yet)" });
 	@include breakpoints.down("md") {
 		display: none;
 	}
+}
+
+.title {
+	font-size: 2.5em;
 }
 
 p {

@@ -1,4 +1,4 @@
-import { defineNuxtModule, createResolver, addComponentsDir } from "@nuxt/kit";
+import { defineNuxtModule, createResolver, addComponentsDir, installModule } from "@nuxt/kit";
 import defu from "defu";
 
 export interface Config {
@@ -21,6 +21,9 @@ export default defineNuxtModule({
 
 	async setup(_, nuxt) {
 		const resolver = createResolver(import.meta.url);
+
+		installModule("@nuxt/fonts");
+		installModule("@nuxt/icon");
 
 		nuxt.options.runtimeConfig.public = defu(nuxt.options.runtimeConfig.public, defaults);
 		nuxt.options.css.push(resolver.resolve("./scss/global.scss"));

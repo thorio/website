@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
 	compatibilityDate: "2024-10-19",
-	modules: ["@workspace/ui-lib", "@nuxt/fonts"],
+	modules: ["@workspace/ui-lib"],
 
 	app: {
 		head: {

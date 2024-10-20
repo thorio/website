@@ -1,6 +1,10 @@
+<script setup lang="ts">
+const { appName } = useRuntimeConfig().public;
+</script>
+
 <template>
 	<img width="150" height="150" src="/favicon.svg" alt="" />
-	<span>Chirality</span>
+	<span>{{ appName }}</span>
 </template>
 
 <style lang="scss" scoped>

@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { LogOut, LogIn } from "lucide-vue-next";
 import { useConfig } from "../src/config";
 
-let { loginUrl, logoutUrl } = useConfig();
+const { loginUrl, logoutUrl } = useConfig();
 
 defineProps<{
 	ghost?: boolean,
@@ -13,18 +12,18 @@ defineProps<{
 
 <template>
 	<header :class="{ solid: !ghost }">
-		<ChiralityLogo v-if="!noLogo" />
+		<AppLogo v-if="!noLogo" />
 
 		<div class="item user">
 			<template v-if="username">
 				<span class="username">{{ username }}</span>
 				<a :href="logoutUrl">
-					<LogOut :size="18" />
+					<Icon name="lucide:log-out" />
 				</a>
 			</template>
 
 			<a v-else :href="loginUrl">
-				<LogIn :size="18" />
+				<Icon name="lucide:log-in" />
 			</a>
 		</div>
 	</header>
@@ -43,6 +42,7 @@ header {
 	flex-direction: row;
 	border-bottom: solid 2px transparent;
 	padding: 0.3em 0.3em;
+	min-height: 50px;
 
 	@include breakpoints.up(md) {
 		padding: 0.3em 1em;
@@ -77,9 +77,9 @@ header {
 
 	a {
 		transition: color 0.2s;
-		color: inherit;
 		margin: auto 0 auto 1em;
-		padding-top: 6px;
+		height: 1em;
+		padding-top: 1px;
 
 		&:hover {
 			color: colors.$accent

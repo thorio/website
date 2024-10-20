@@ -35,7 +35,6 @@ section {
 	margin-bottom: 1.5em;
 	display: flex;
 	flex-direction: column;
-	color: inherit;
 	text-decoration: none;
 
 	transition: transform 0.2s, filter 0.2s;

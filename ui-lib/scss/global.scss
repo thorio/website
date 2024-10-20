@@ -1,12 +1,5 @@
 @use "./colors.scss";
 
-body {
-	margin: 0;
-	background-color: colors.$background;
-	font-family: Roboto, Arial, sans-serif;
-	color: colors.$text;
-}
-
 html {
 	box-sizing: border-box;
 }
@@ -19,4 +12,16 @@ html {
 
 *:focus-visible {
 	outline: 1px solid #777;
+}
+
+body {
+	margin: 0;
+	background-color: colors.$background;
+	font-family: Roboto, Arial, sans-serif;
+	font-size: 12pt;
+	color: colors.$text;
+}
+
+a {
+	color: inherit;
 }
