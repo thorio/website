@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { matrixUrl, githubUrl, forgejoUrl, printablesUrl } = useRuntimeConfig().public;
+
 useSeoMeta({ description: "Nothing to see here (yet)" });
 </script>
 
@@ -11,6 +13,18 @@ useSeoMeta({ description: "Nothing to see here (yet)" });
 	<div class="placeholder"></div>
 
 	<p>Nothing to see here.</p>
+
+	<div class="links">
+		<a :href="matrixUrl">
+			<Icon name="simple-icons:matrix" />
+		</a>
+		<a :href="githubUrl">
+			<Icon name="simple-icons:github" />
+		</a>
+		<a :href="printablesUrl">
+			<Icon name="simple-icons:printables" />
+		</a>
+	</div>
 </template>
 
 <style lang="scss">
@@ -30,6 +44,27 @@ useSeoMeta({ description: "Nothing to see here (yet)" });
 
 .title {
 	font-size: 2.5em;
+
+	@include breakpoints.up("md") {
+		margin-top: 1em;
+	}
+}
+
+.links {
+	font-size: 2.5em;
+	margin: 2em auto 0 auto;
+	display: flex;
+	flex-direction: row;
+	gap: 0.5em;
+	justify-content: center;
+
+	a {
+		transition: color 0.2s;
+
+		&:hover {
+			color: colors.$accent
+		}
+	}
 }
 
 p {

@@ -2,6 +2,7 @@ import { defineNuxtModule, createResolver, addComponentsDir, installModule } fro
 import defu from "defu";
 
 export interface Config {
+	appName: string,
 	loginUrl: string,
 	logoutUrl: string,
 }
@@ -11,6 +12,7 @@ declare module "@nuxt/schema" {
 }
 
 const defaults: Config = {
+	appName: "Chirality",
 	loginUrl: "https://home.chirality.de",
 	logoutUrl: "https://auth.chirality.de",
 };
