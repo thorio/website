@@ -11,6 +11,9 @@ export default defineNuxtConfig({
 			link: [
 				{ rel: "icon", href: "/favicon.svg" },
 			],
+			meta: [
+				{ name: "darkreader-lock", content: "." },
+			],
 		},
 	},
 
