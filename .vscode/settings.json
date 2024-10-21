@@ -11,4 +11,8 @@
 		".pnpm-store": true,
 		"LICENSE": true,
 	},
+
+	"search.exclude": {
+		"**/pnpm-lock.yaml": true
+	}
 }
