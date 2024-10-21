@@ -6,12 +6,11 @@
 	},
 	"main": "index.ts",
 	"dependencies": {
-		"@nuxt/kit": "^3.13.2",
 		"@nuxt/fonts": "^0.10.0",
 		"@nuxt/icon": "^1.5.6",
+		"@nuxt/kit": "^3.13.2",
 		"defu": "^6.1.4"
 	},
 	"devDependencies": {
-		"@iconify-json/lucide": "^1.2.10"
 	}
 }

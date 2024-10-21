@@ -10,6 +10,10 @@ export default defineNuxtConfig({
 		},
 	},
 
+	features: {
+		noScripts: true,
+	},
+
 	app: {
 		head: {
 			title: "Chirality",

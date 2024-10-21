@@ -14,6 +14,10 @@ export default defineNuxtConfig({
 		},
 	},
 
+	features: {
+		noScripts: true,
+	},
+
 	devServerHandlers: [
 		{
 			// These headers are set by the reverse proxy in production,

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { matrixUrl, githubUrl, forgejoUrl, printablesUrl } = useRuntimeConfig().public;
+const { matrixUrl, githubUrl, printablesUrl } = useRuntimeConfig().public;
 
 useSeoMeta({ description: "Nothing to see here (yet)" });
 </script>
