@@ -5,25 +5,27 @@ useSeoMeta({ description: "Nothing to see here (yet)" });
 </script>
 
 <template>
-	<AppHeader ghost no-logo />
-	<p class="title">
-		<AppLogo />
-	</p>
+	<div>
+		<AppHeader ghost no-logo />
+		<p class="title">
+			<AppLogo />
+		</p>
 
-	<div class="placeholder"></div>
+		<div class="placeholder" />
 
-	<p>Nothing to see here.</p>
+		<p>Nothing to see here.</p>
 
-	<div class="links">
-		<a :href="matrixUrl">
-			<Icon name="simple-icons:matrix" />
-		</a>
-		<a :href="githubUrl">
-			<Icon name="simple-icons:github" />
-		</a>
-		<a :href="printablesUrl">
-			<Icon name="simple-icons:printables" />
-		</a>
+		<div class="links">
+			<a :href="matrixUrl">
+				<Icon name="simple-icons:matrix" />
+			</a>
+			<a :href="githubUrl">
+				<Icon name="simple-icons:github" />
+			</a>
+			<a :href="printablesUrl">
+				<Icon name="simple-icons:printables" />
+			</a>
+		</div>
 	</div>
 </template>
 

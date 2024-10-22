@@ -8,6 +8,7 @@
 		"down": "docker-compose down --remove-orphans"
 	},
 	"devDependencies": {
+		"eslint": "^9.13.0",
 		"vue-tsc": "^2.1.6"
 	}
 }

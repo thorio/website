@@ -3,7 +3,7 @@
 	"scripts": {
 		"build": "nuxt build",
 		"dev": "nuxt dev --port=3002",
-		"lint": "nuxt typecheck",
+		"lint": "nuxt typecheck && eslint .",
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {

@@ -19,7 +19,7 @@ export function getConfig(): Config {
 }
 
 function loadConfig(): Config {
-	let configString = fs.readFileSync(`${process.cwd()}/config.yml`);
+	const configString = fs.readFileSync(`${process.cwd()}/config.yml`);
 
 	return yaml.parse(configString.toString());
 }

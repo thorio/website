@@ -10,9 +10,11 @@ useSeoMeta({ title: `${errorpage?.name} - Chirality` });
 </script>
 
 <template>
-	<h1>{{ errorpage?.name }}</h1>
-	<sub>{{ errorpage?.subtitle }}</sub>
-	<p>{{ errorpage?.title }}</p>
+	<div>
+		<h1>{{ errorpage?.name }}</h1>
+		<sub>{{ errorpage?.subtitle }}</sub>
+		<p>{{ errorpage?.title }}</p>
+	</div>
 </template>
 
 <style lang="scss">

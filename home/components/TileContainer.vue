@@ -6,9 +6,9 @@ defineProps<{ tiles: Tile[]; }>();
 
 <template>
 	<section>
-		<a class="tile" v-for="tile in tiles" :href="tile.url">
+		<a v-for="tile in tiles" :key="tile.name" class="tile" :href="tile.url">
 			<div class="image-container">
-				<img width="80" height="80" :src="`/icons/${tile.icon}`" alt="" />
+				<img width="80" height="80" :src="`/icons/${tile.icon}`" alt="">
 			</div>
 			<p>{{ tile.name }}</p>
 		</a>

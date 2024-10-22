@@ -6,6 +6,8 @@ useSeoMeta({ description: `${appName} Service Dashboard` });
 </script>
 
 <template>
-	<AppHeader :username="data!.username" />
-	<TileContainer :tiles="data!.tiles" />
+	<div>
+		<AppHeader :username="data!.username" />
+		<TileContainer :tiles="data!.tiles" />
+	</div>
 </template>

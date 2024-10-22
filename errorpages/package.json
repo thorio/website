@@ -4,13 +4,14 @@
 	"scripts": {
 		"build": "nuxt generate",
 		"dev": "nuxt dev --port=3001",
-		"lint": "nuxt typecheck",
+		"lint": "nuxt typecheck && eslint .",
 		"postinstall": "nuxt prepare"
 	},
 	"dependencies": {
 		"@workspace/ui-lib": "workspace:^"
 	},
 	"devDependencies": {
+		"@nuxt/eslint": "^0.6.0",
 		"@types/node": "^18.19.57",
 		"nuxt": "^3.13.2",
 		"sass": "^1.80.3"

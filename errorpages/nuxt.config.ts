@@ -2,6 +2,7 @@ import routes from "./pages";
 
 export default defineNuxtConfig({
 	compatibilityDate: "2024-10-19",
+	modules: ["@nuxt/eslint"],
 
 	app: {
 		head: {

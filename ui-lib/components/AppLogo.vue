@@ -3,7 +3,7 @@ const { appName } = useRuntimeConfig().public;
 </script>
 
 <template>
-	<img width="150" height="150" src="/favicon.svg" alt="" />
+	<img width="150" height="150" src="/favicon.svg" alt="">
 	<span>{{ appName }}</span>
 </template>
 

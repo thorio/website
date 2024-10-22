@@ -8,6 +8,7 @@ export interface Config {
 }
 
 declare module "@nuxt/schema" {
+	// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 	interface PublicRuntimeConfig extends Config { }
 }
 
@@ -24,6 +25,7 @@ export default defineNuxtModule({
 	async setup(_, nuxt) {
 		const resolver = createResolver(import.meta.url);
 
+		installModule("@nuxt/eslint");
 		installModule("@nuxt/fonts");
 		installModule("@nuxt/icon");
 
