@@ -32,9 +32,6 @@ defineProps<{
 </template>
 
 <style lang="scss" scoped>
-@use "../scss/colors.scss";
-@use "../scss/breakpoints.scss";
-
 header {
 	position: sticky;
 	top: 0;

@@ -20,8 +20,6 @@ const { matrixUrl, githubUrl, printablesUrl } = useRuntimeConfig().public;
 </template>
 
 <style lang="scss">
-@use "@workspace/ui-lib/scss/colors.scss";
-
 .links {
 	font-size: 2.5em;
 	margin: 2em auto 0 auto;

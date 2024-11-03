@@ -1,5 +1,6 @@
 import { defineNuxtModule, createResolver, addComponentsDir, installModule } from "@nuxt/kit";
 import defu from "defu";
+import type { NuxtOptions, Nuxt } from "@nuxt/schema";
 
 export interface Config {
 	appName: string,
@@ -18,29 +19,56 @@ const defaults: Config = {
 	logoutUrl: "https://auth.chirality.de",
 };
 
+const scssModules = [
+	"./scss/colors.scss",
+	"./scss/breakpoints.scss"
+];
+
+const resolver = createResolver(import.meta.url);
+
 export default defineNuxtModule({
 	meta: { name: "ui-lib" },
 	defaults,
 
 	async setup(_, nuxt) {
-		const resolver = createResolver(import.meta.url);
-
 		installModule("@nuxt/eslint");
 		installModule("@nuxt/fonts");
 		installModule("@nuxt/icon");
 
 		nuxt.options.runtimeConfig.public = defu(nuxt.options.runtimeConfig.public, defaults);
-		nuxt.options.css.push(resolver.resolve("./scss/global.scss"));
 
-		nuxt.hook("nitro:config", async (nitroConfig) => {
-			(nitroConfig.publicAssets ??= []).push({
-				dir: resolver.resolve("./public"),
-				maxAge: 60 * 60 * 24 * 365, // 1 year
-			});
-		});
+		registerCss(nuxt.options);
+		registerAssets(nuxt);
 
-		await addComponentsDir({
-			path: resolver.resolve("./components"),
-		});
+		await registerComponents();
 	},
 });
+
+function registerComponents() {
+	return addComponentsDir({
+		path: resolver.resolve("./components"),
+	});
+}
+
+function registerAssets(nuxt: Nuxt) {
+	nuxt.hook("nitro:config", async (nitroConfig) => {
+		(nitroConfig.publicAssets ??= []).push({
+			dir: resolver.resolve("./public"),
+			maxAge: 60 * 60 * 24 * 365,
+		});
+	});
+}
+
+function registerCss(options: NuxtOptions) {
+	// global scss variables
+	const scssImports = scssModules
+		.map(m => resolver.resolve(m))
+		.map(m => `@use "${m}";`)
+		.join("");
+
+	options.vite = defu(options.vite, { css: { preprocessorOptions: { scss: { additionalData: scssImports, } } } });
+
+	// global styles
+	options.css.push(resolver.resolve("./scss/global.scss"));
+}
+

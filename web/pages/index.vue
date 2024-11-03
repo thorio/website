@@ -18,8 +18,6 @@ useSeoMeta({ description: "Nothing to see here (yet)" });
 </template>
 
 <style lang="scss">
-@use "@workspace/ui-lib/scss/breakpoints.scss";
-
 .placeholder {
 	width: 32em;
 	height: 24em;
