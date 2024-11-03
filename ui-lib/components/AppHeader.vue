@@ -19,11 +19,13 @@ defineProps<{
 				<span class="username">{{ username }}</span>
 				<a :href="logoutUrl">
 					<Icon name="lucide:log-out" />
+					<ScreenReaderOnly>Logout</ScreenReaderOnly>
 				</a>
 			</template>
 
 			<a v-else :href="loginUrl">
 				<Icon name="lucide:log-in" />
+				<ScreenReaderOnly>Login</ScreenReaderOnly>
 			</a>
 		</div>
 	</header>

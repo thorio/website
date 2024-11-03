@@ -18,12 +18,15 @@ useSeoMeta({ description: "Nothing to see here (yet)" });
 		<div class="links">
 			<a :href="matrixUrl">
 				<Icon name="simple-icons:matrix" />
+				<ScreenReaderOnly>Matrix</ScreenReaderOnly>
 			</a>
 			<a :href="githubUrl">
 				<Icon name="simple-icons:github" />
+				<ScreenReaderOnly>Github</ScreenReaderOnly>
 			</a>
 			<a :href="printablesUrl">
 				<Icon name="simple-icons:printables" />
+				<ScreenReaderOnly>Printables</ScreenReaderOnly>
 			</a>
 		</div>
 	</div>
