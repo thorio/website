@@ -4,7 +4,7 @@ WORKDIR /source/home
 
 RUN pnpm run build
 
-FROM node:20-alpine AS final
+FROM node:22-alpine AS final
 
 RUN mkdir /app
 WORKDIR /app
