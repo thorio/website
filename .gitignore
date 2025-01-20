@@ -4,3 +4,5 @@
 **/.nuxt
 **/dist
 **/.output
+
+*.code-workspace

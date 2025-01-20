@@ -1,5 +1,5 @@
 {
-	"name": "nuxt-app",
+	"name": "errorpages",
 	"private": true,
 	"scripts": {
 		"build": "nuxt generate",
@@ -11,9 +11,9 @@
 		"@workspace/ui-lib": "workspace:^"
 	},
 	"devDependencies": {
-		"@nuxt/eslint": "^0.6.0",
-		"@types/node": "^18.19.57",
-		"nuxt": "^3.13.2",
-		"sass": "^1.80.3"
+		"@nuxt/eslint": "^0.7.5",
+		"@types/node": "^22.10.7",
+		"nuxt": "^3.15.2",
+		"sass": "^1.83.4"
 	}
 }
