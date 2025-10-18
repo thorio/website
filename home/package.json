@@ -9,11 +9,11 @@
 	},
 	"dependencies": {
 		"@workspace/ui-lib": "workspace:^",
-		"yaml": "^2.7.0"
+		"yaml": "^2.8.1"
 	},
 	"devDependencies": {
-		"nuxt": "^3.15.2",
-		"sass": "^1.83.4",
-		"vite": "^6.0.9"
+		"nuxt": "^4.1.3",
+		"sass": "^1.93.2",
+		"vite": "^7.1.10"
 	}
 }
